@@ -1,0 +1,15 @@
+{
+  "name": "PostMessagesDispatcher",
+  "version": "1.0.0",
+  "description": "Send and receive messages with PostMessages",
+  "main": "index.js",
+  "author": "Mikhail Levi",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "url": "https://github.com/mindonline/post-messages-dispatcher",
+    "type": "git"
+  }
+}
