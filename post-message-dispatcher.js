@@ -12,9 +12,9 @@ export class PostMessageDispatcher {
         this.targetWindow.postMessage(new Message(this.channel, action, payload), this.origin);
     }
 
-    listen(callback) {
+    listen(callback, checkOrigin = true) {
         window.addEventListener("message", (event)=>{
-            if (event.origin !== this.origin)
+            if (checkOrigin && event.origin !== this.origin)
                 return;
 
             if (isMessage(event.data) && event.data.channel === this.channel) {
