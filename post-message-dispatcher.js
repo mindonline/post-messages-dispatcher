@@ -13,12 +13,12 @@ export class PostMessageDispatcher {
     }
 
     listen(callback, checkOrigin = true) {
-        window.addEventListener("message", (event)=>{
+        global.window.addEventListener("message", (event)=>{
             if (checkOrigin && event.origin !== this.origin)
                 return;
 
             if (isMessage(event.data) && event.data.channel === this.channel) {
-                callback(event.data)
+                callback(event.data, event)
             }
 
         }, false);
